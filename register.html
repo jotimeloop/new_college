@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Register - Santhigiri College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<script>
+			function handleRegister(){
+				let name=document.getElementById("fullName").value;
+				let email=document.getElementById("email").value;
+				let phone=document.getElementById("phone").value;
+				pattern1=/^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-z]{2,}$/;
+				pattern2=/^[0-9]{10}$/;
+			
+				if(name==""){
+					alert("Name feld can not be empty");
+					return false;
+				}
+				else if(!(pattern1.test(email))){
+					alert("Invalid Email");
+					return false;
+				}
+				else if(!(pattern2.test(phone))){
+					alert("Invalid Phone Number");
+					return false;
+				}
+				else{
+					alert("Registration Successful");
+					return true;
+				}
+			}
+	</script>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Santhigiri College</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="register-container">
+            <h1>Create Account</h1>
+            <p class="subtitle">Join Santhigiri College family — start your journey today!</p>
+
+            <form id="registerForm" onsubmit="return handleRegister()">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com" >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" >
+                </div>
+
+                <button type="submit" class="btn-register">Sign Up</button>
+
+                <div class="error-message" id="errorMsg"></div>
+            </form>
+
+            <div class="extra-links">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Santhigiri College</h4>
+                <p>Vazhithala P.O, Thodupuzha<br>Idukki Dt., Kerala, India</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: 04862-273006, 82812 10209, 70340 31319</p>
+                <p>Email: office@santhigiricollege.ac.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/">Facebook</a>
+                    <a href="https://github.com/">GitHub</a>
+                    <a href="https://in.linkedin.com/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
